@@ -26,7 +26,10 @@ public class GameUI {
     ArrayList<String> names = ask_players_names();
     game.initialize(names);
     game.play();
+    
+    
   }
+  
 
   private ArrayList<String> ask_players_names() {
     return new ArrayList<>();
@@ -34,4 +37,6 @@ public class GameUI {
 
   private void print_welcome_msg() {
   }
+  
+  
 }

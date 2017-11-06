@@ -3,12 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package upmc.pcg;
+package upmc.pcg.game;
+import java.util.*;
 
 /**
  *
  * @author licence
  */
-public class Energy {
+public class Card {
+    
+    // attributs
+    public String nom;
+    public int categorie;
+    
+    //constructeur
+   
+    
+    //methodes
+
     
 }

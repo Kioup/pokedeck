@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package upmc.pcg;
+package upmc.pcg.game;
 import java.util.*;
 
 /**
@@ -18,9 +18,10 @@ public class Pokemon extends Card {
     int stage;
     String faiblesse;
     String resistance;
-    ArrayList Attacks;
+    ArrayList<Attacks> Attacks;
+    String description;
 
-    public Pokemon(String nom, int categorie, int coutRetraite, String type, int vie, int stage, String faiblesse, String resistance, Attacks attacks) {
+    public Pokemon(String nom, int categorie, int coutRetraite, String type, int vie, int stage, String faiblesse, String resistance, String description) {
         this.nom = nom;
         this.categorie = categorie;
         this.coutRetraite = coutRetraite;
@@ -29,10 +30,15 @@ public class Pokemon extends Card {
         this.stage = stage;
         this.faiblesse = faiblesse;
         this.resistance = resistance;
+        this.Attacks = new ArrayList<Attacks>();
+        this.description = description;
+    }
+    
+    public void addAttacks(Attacks attacks) {
         this.Attacks.add(attacks);
     }
 
-    public String printCard(String nom){
+    public String printCard(){
         nom = this.nom;
         int vie = this.vie;
         String type = this.type;
@@ -53,14 +59,19 @@ public class Pokemon extends Card {
         String faiblesse = this.faiblesse;
         String resistance = this.resistance;
         int coutRetraite = this.coutRetraite;
-        ArrayList Attacks = this.Attacks;
+        ArrayList attacks = this.Attacks;
+        String description = this.description;
         
-        return "----- State Data ----- \n"+
+        String resultat =  "----- State Data ----- \n"+
                "        "+"| "+stage+" | "+nom+" : "+vie+" HP ----------- Type : "+type+"\n"+
                "----- Attacks ----- \n"+
-               "        "+Attacks+"\n"+
+               "        "+attacks+"\n"+
                "----- Type Data ----- \n"+
-               "        "+"Faiblesse : "+faiblesse+" | Resistance : "+resistance+" | Cout de Retraite : "+coutRetraite+"\n";
+               "        "+"Faiblesse : "+faiblesse+" | Resistance : "+resistance+" | Cout de Retraite : "+coutRetraite+"\n"+
+               "----- Description ----- \n"+
+               "        "+description+"     ";
+        
+        return resultat;
         
     }
     

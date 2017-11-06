@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package upmc.pcg;
+package upmc.pcg.game;
 
 /**
  *
  * @author licence
  */
-public class Card {
+public class Trainer extends Card {
     
-    // attributs
-    public String nom;
-    public int categorie;
-    
-    //constructeur
-    
+    String effect;
 
-    //methodes
+    public Trainer(String nom, int categorie, String effect) {
+        this.nom = nom;
+        this.categorie = categorie;
+        this.effect = effect;
+    }
+    
+    
     
 }
